@@ -12,6 +12,19 @@ import '@stencil/core';
 
 export namespace Components {
 
+  interface HelloWorld {
+    /**
+    * Name
+    */
+    'name': string;
+  }
+  interface HelloWorldAttributes extends StencilHTMLAttributes {
+    /**
+    * Name
+    */
+    'name'?: string;
+  }
+
   interface MyComponent {
     /**
     * The first name
@@ -44,13 +57,21 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'HelloWorld': Components.HelloWorld;
     'MyComponent': Components.MyComponent;
   }
 
   interface StencilIntrinsicElements {
+    'hello-world': Components.HelloWorldAttributes;
     'my-component': Components.MyComponentAttributes;
   }
 
+
+  interface HTMLHelloWorldElement extends Components.HelloWorld, HTMLStencilElement {}
+  var HTMLHelloWorldElement: {
+    prototype: HTMLHelloWorldElement;
+    new (): HTMLHelloWorldElement;
+  };
 
   interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
   var HTMLMyComponentElement: {
@@ -59,10 +80,12 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'hello-world': HTMLHelloWorldElement
     'my-component': HTMLMyComponentElement
   }
 
   interface ElementTagNameMap {
+    'hello-world': HTMLHelloWorldElement;
     'my-component': HTMLMyComponentElement;
   }
 
