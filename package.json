@@ -1,6 +1,6 @@
 {
   "name": "@vpaulo/vp-components",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Stencil Component Starter",
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
@@ -21,8 +21,8 @@
     "@stencil/core": "~0.15.2"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/vpaulo/vp-components.git"
+    "type": "git",
+    "url": "https://github.com/vpaulo/vp-components.git"
   },
   "license": "MIT"
 }
